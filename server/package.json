@@ -1,0 +1,40 @@
+{
+  "name": "mac-movie-list-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "BABEL_ENV=testing jest",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/preset-env": "^7.18.2",
+    "babel-jest": "^28.1.1",
+    "cors": "^2.8.5",
+    "esm": "^3.2.25",
+    "express": "^4.18.1",
+    "jest": "^28.1.1",
+    "knex": "^2.1.0",
+    "nodemon": "^2.0.17",
+    "pg": "^8.7.3",
+    "supertest": "^6.2.3"
+  },
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.jsx$": "babel-jest",
+      "^.+\\.js$": "babel-jest"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!iggy-common)"
+    ]
+  }
+}
