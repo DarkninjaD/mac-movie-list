@@ -13,6 +13,8 @@ import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import deleteMovieAPI from "../../api/deleteMovieAPI";
 import searchMovieAPI from "../../api/searchMovieAPI";
+import { WatchedSwitched } from "../watchedSwitched/watchedSwitched";
+import { FormGroup, FormControlLabel } from "@mui/material";
 
 const DisplayMovieData = () => {
   const { movieList, setMovieList } = useAppContext();
@@ -29,6 +31,9 @@ const DisplayMovieData = () => {
     e.preventDefault();
     await deleteMovieAPI(e.currentTarget.name);
     setMovieList(await searchMovieAPI());
+  };
+  const handleWatched = async (e) => {
+    console.log(movieList);
   };
 
   return (
@@ -48,10 +53,15 @@ const DisplayMovieData = () => {
                   type="submit"
                   sx={{ p: "10px" }}
                   onClick={(e) => handleRemove(e)}
-                  name={movie.title}
+                  name={movie.id}
                 >
                   <DeleteIcon />
                 </IconButton>
+                <FormControlLabel
+                  control={<WatchedSwitched defaultChecked />}
+                  label="Watched"
+                  onClick={(e) => handleWatched(e)}
+                />
               </StyledTableCell>
             </StyledTableRow>
           ))}

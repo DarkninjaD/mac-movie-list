@@ -6,11 +6,13 @@ services:
     environment:
       - DATABASE_HOSE=127.0.0.1
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSEORD=docker
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=mac_movies
     ports:
       - 5432:5432
     volumes:
       - $HOME/docker/volumes/postgres:/var/lib/postgresql/data
+
   server:
     container_name: mac-movies-backend
     image: mac-movies-backend

@@ -2,7 +2,7 @@ const deleteMovieAPI = async (remove) => {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
-  var raw = JSON.stringify({ title: remove });
+  var raw = JSON.stringify({ id: remove });
 
   var requestOptions = {
     method: "DELETE",

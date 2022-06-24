@@ -19,14 +19,14 @@ const add = (req, res) => {
 };
 
 const remove = (req, res) => {
-  const { title } = req.body;
+  const { id } = req.body;
 
   knex("movies")
     .select("*")
-    .where({ title: title })
+    .where({ id: id })
     .del()
     .then(() => {
-      res.status(200).json({ message: `${title} has been deleted` });
+      res.status(200).json({ message: `${id} has been deleted` });
     });
 };
 

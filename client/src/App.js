@@ -1,5 +1,5 @@
 import "./App.css";
-import DisplayMovieData from "./components/displayMovie/displayMovies";
+import DisplayMovie from "./components/displayMovie/displayMovies";
 import Container from "@mui/material/Container";
 import MoviesSearchBox from "./components/moviesSearchBox/moviesSearchBox";
 import Grid from "@mui/material/Grid";
@@ -11,8 +11,8 @@ function App() {
       <Container fixed className="App">
         <Grid
           container
-          spacing={3}
-          rowSpacing={1}
+          spacing={5}
+          rowSpacing={2}
           columnSpacing={{ md: 1 }}
           justifyContent="center"
           rowGap={2}
@@ -24,7 +24,7 @@ function App() {
             <AddMovieBox />
           </Grid>
           <Grid item>
-            <DisplayMovieData />
+            <DisplayMovie />
           </Grid>
         </Grid>
       </Container>
